@@ -5,12 +5,15 @@ import java.nio.file.*;
 import java.util.stream.Stream;
 
 public class LecturaTxt {
-    Validacion v = new Validacion();
-    public void lectura(){
+    public String lectura(){
+        StringBuilder texto = new StringBuilder();
+
         try(Stream<String> stream = Files.lines(Paths.get("ficheros/Calculadora.txt"))){
-            stream.forEach(System.out::println);
+            stream.forEach(texto::append);
         }catch (IOException e){
-            System.err.println(e);
+            System.err.println("Error al intentar leer el archivo: "+ e);
         };
+
+        return texto.toString();
     }
 }

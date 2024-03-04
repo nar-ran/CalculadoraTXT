@@ -1,9 +1,17 @@
 package com.nkl;
 
 public class Resultado {
-    public void mostrar(){
-        LecturaTxt lct = new LecturaTxt();
+    private String txt;
+    private double rs;
 
-        lct.lectura();
+    LecturaTxt lct = new LecturaTxt();
+    Validacion v = new Validacion();
+
+    public void mostrar(){
+        txt = lct.lectura();
+
+        v.txtValido(txt);
+
+
     }
 }

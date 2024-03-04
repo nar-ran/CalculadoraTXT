@@ -1,29 +1,44 @@
 package com.nkl;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validacion {
-    private int val = 0;
+    private int validacion = 0;
+    private double operacion;
 
-    public boolean txtValido(String text) {
-        Pattern operadores = Pattern.compile("[()-+*/\\-0-9]+");
-        Matcher match = operadores.matcher(text);
+    public int txtValido(String text) {
+        String operadores[] = {"(",")","-","+","*","/"};
+        Le
 
-        // Primera validación para saber si tiene signos de operación.
-        if (match.matches()) {
-            val = 1;
-            System.err.println("Contiene operadores NO validos.");
+        if(text.contains("+")){
+            System.out.println("suma");
+        }
+
+        if (text.contains("-")) {
+            System.out.println("resta");
+        }
+
+        if (text.contains("*")) {
+            System.out.println("Multiplicación");
+        }
+
+        if (text.contains("/")) {
+            System.out.println("Division");
         }else{
-            System.out.println("Operación valida");
-        }/*else{
-            if (){
+            System.err.println("El archivo no es valido.");
+        }
 
-            }
-        }*/
+//        // Primera validación para saber si tiene signos de operación.
+//        if (Arrays.asList(operadores).contains(text)) {
+//            System.out.println("Contiene caracteres ");
+//        }else{
+//            validacion = 1;
+//            System.err.println("Contiene operadores NO validos.");
+//        }
 
 
-
-        return false;
+        return validacion;
     }
 }

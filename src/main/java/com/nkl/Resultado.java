@@ -1,16 +1,24 @@
 package com.nkl;
 
 public class Resultado {
-    private String txt;
-    private double rs;
+    private String textoTxt;
+    private double resultado;
 
-    LecturaTxt lct = new LecturaTxt();
-    Validacion v = new Validacion();
+    LecturaTxt leerArchivo = new LecturaTxt();
+    Validacion validarTxt = new Validacion();
 
     public void mostrar(){
-        txt = lct.lectura();
+        textoTxt = leerArchivo.leerTxt();
+        int validacion = validarTxt.txtValido(textoTxt);
 
-        v.txtValido(txt);
+        System.out.println("txt = " + textoTxt);
+
+        if(validacion==0){
+            System.out.println("Archivo valido");
+        }else{
+//            System.err.println("Error al hacer la operación.");
+            System.err.println("Es invalido el txt");
+        };
 
 
     }

@@ -14,4 +14,5 @@ Por el contrario si el archivo txt es incorrecto se mostrara un mensaje de que n
 ## Diagrama de clases
 Se presenta el diagrama de clases donde se encuentra la estructura del programa.
 
-![Diagrama Clases Calculadora txt](https://github.com/nar-ran/CalculadoraTXT/assets/143750294/c53ab396-912f-4e21-bb5a-91f9575a3ec8)
+
+![Diagrama Clases Calculadora txt Final](https://github.com/nar-ran/CalculadoraTXT/assets/143750294/3aa757c1-1a88-4be8-bd1b-6213404ee16c)

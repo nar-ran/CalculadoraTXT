@@ -14,12 +14,9 @@ public class Resultado {
         System.out.println("txt = " + textoTxt);
 
         if(validacion==0){
-            System.out.println("Archivo valido");
-        }else{
+            System.out.println("El resultado de la operación es: "+resultado);
+        }
+
 //            System.err.println("Error al hacer la operación.");
-            System.err.println("Es invalido el txt");
-        };
-
-
     }
 }

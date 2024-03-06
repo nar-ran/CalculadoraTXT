@@ -23,40 +23,33 @@ public class Resultado {
             String[] subs = textoTxt.split("\\|");
 
             for (String sub: subs){
-                if (!sub.isEmpty()){
-                    if(sub.matches("[+-]?[0-9]*\\.?[0-9]")){
-                        double num = Double.parseDouble(sub);
-                        nums.add(num);
-                        System.out.println(nums);
-                    } else if (sub.matches("[-+*/]")) {
-                        ops.add(sub.charAt(0));
-                    }else{
-                        System.err.println("Es invalido el archivo.");
-                        System.exit(0);
-                    }
+                if(sub.matches("[+-]?[0-9]*\\.?[0-9]")){
+                    double num = Double.parseDouble(sub);
+                    nums.add(num);
+                } else if (sub.matches("[-+*/]")) {
+                    ops.add(sub.charAt(0));
                 }else{
-                    System.err.println("El archivo esta vacio.");
+                    System.err.println("Es invalido el archivo.");
+                    System.exit(0);
                 }
             }
 
 
             System.out.println("-----------------------------------");
-            System.out.println("Se realiza la operación");
-            resultado = nums.get(0);
             for(int i = 0; i <= nums.size() - 1; i++){
                 try{
-                    System.out.println(nums.get(i)+" "+ops.get(i));
                     switch (ops.get(i)){
                         case '+' ->  resultado = resultado + nums.get(i + 1);
                         case '-' ->  resultado = resultado - nums.get(i + 1);
                         case '*' ->  resultado = resultado * nums.get(i + 1);
                         case '/' ->  resultado = resultado / nums.get(i + 1);
                     }
-                    System.out.println("resultado = " + resultado);
                 }catch (IndexOutOfBoundsException e){
                     System.err.println("Ha excedido el limite.");
                 }
             }
+
+            System.out.println("El resultado es: "+resultado);
         }
     }
 }

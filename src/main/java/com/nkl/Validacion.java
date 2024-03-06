@@ -30,13 +30,10 @@ public class Validacion {
         }else if(matcher.find()){
             validacion = 1;
             System.err.println("El archivo txt contiene letras.");
-        }else if(!Pattern.compile("[-+*/]").matcher(text).find()){ // Validacion de signos de operación
+        }/*else if(!Pattern.compile("[-+/*]").matcher(text).find()){ // Validacion de signos de operación
             validacion = 2;
             System.err.println("El tipo de operación no es valida para calcular.");
-        }else if(!Pattern.compile("[+-]?[0-9]*\\.?[0-9]").matcher(text).find()){
-            validacion = 3;
-            System.out.println("No contiene numeros el programa. ");
-        }else if(text.contains("/|0|")){
+        }*/else if(text.contains("/|0|")){
             validacion = 4;
             System.err.println("No se puede dividir entre cero.");
         }

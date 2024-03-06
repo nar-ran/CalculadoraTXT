@@ -11,23 +11,28 @@ public class Validacion {
         Pattern pattern = Pattern.compile("[a-zA-Z]");
         Matcher matcher = pattern.matcher(text);
 
+        int count = 0;
+        for(int i = 0; i <= text.length() - 1; i++){
+            if(text.charAt(i) == '|'){
+                count++;
+            }
+        }
         if (text.isEmpty()){
             validacion = 1;
             System.err.println("El archivo esta vacio.");
+        }else if(count < 3){
+            validacion = 1;
+            System.out.println(count);
+            System.err.println("El archivo no tiene una estructura adecuada.");
         }else if(!text.matches("[+-]?[0-9]*\\.?[0-9].*")){
             validacion = 1;
             System.err.println("El archivo no puede iniciar con: "+text.charAt(0));
-        }
-
-        /*else if (text.contains()) {
-            // Validación para cuando solo tenga un numero.
-            System.err.println("Operación no valida");
-        }*/ else if(matcher.find()){
+        }else if(matcher.find()){
             validacion = 1;
             System.err.println("El archivo txt contiene letras.");
         }else if(!Pattern.compile("[-+*/]").matcher(text).find()){ // Validacion de signos de operación
             validacion = 2;
-            System.err.println("La operación no es valida para calcular.");
+            System.err.println("El tipo de operación no es valida para calcular.");
         }else if(!Pattern.compile("[+-]?[0-9]*\\.?[0-9]").matcher(text).find()){
             validacion = 3;
             System.out.println("No contiene numeros el programa. ");

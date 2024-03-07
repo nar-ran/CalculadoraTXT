@@ -10,10 +10,12 @@ public class LecturaTxt {
 
         try(Stream<String> stream = Files.lines(Paths.get("ficheros/Calculadora.txt"))){
             stream.forEach(line -> {
-                if(line.contains("|")){
+                if (line.trim().isEmpty()){
+                    return;
+                }else if(line.contains("|")){
                     System.err.println("No es un archivo valido.");
                 }else {
-                    texto.append(line).append("|");
+                    texto.append(line.trim()).append("|");
                 }
             });
         }catch (IOException e){

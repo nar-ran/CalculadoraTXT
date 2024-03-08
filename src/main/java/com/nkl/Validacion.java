@@ -24,8 +24,6 @@ public class Validacion {
             System.err.println("El archivo txt contiene letras.");
         }else if(text.contains("/|0|") || text.contains("/|0.0|")){
             System.err.println("No se puede dividir por cero.");
-        }else if(text.matches("(.)\\1{1,}")){
-            System.err.println("La operación tiene varios signos seguidos.");
         }else{
             validacion = 0;
         }

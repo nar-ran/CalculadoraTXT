@@ -22,7 +22,7 @@ public class Resultado {
             String[] subs = textoTxt.split("\\|");
 
             for (String sub: subs){
-                if(sub.matches("[+-]?[0-9]*\\.?[0-9]")){
+                if(sub.matches("[+-]?[0-9]*\\.?[0-9].*")){
                     double num = Double.parseDouble(sub);
                     nums.add(num);
                 } else if (sub.matches("[-+*/]")) {

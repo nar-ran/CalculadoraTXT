@@ -43,7 +43,8 @@ public class Resultado {
                         case '/' ->  resultado = resultado / nums.get(i+1);
                     }
                 }catch (IndexOutOfBoundsException e){
-                    System.err.println("Ha excedido el limite.");
+                    System.err.println("La operación del archivo es invalida.");
+                    break;
                 }
             }
 

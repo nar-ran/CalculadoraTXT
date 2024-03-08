@@ -1,8 +1,5 @@
 package com.nkl;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Validacion {
     private int validacion = 1;
 

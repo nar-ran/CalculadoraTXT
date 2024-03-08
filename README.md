@@ -16,6 +16,7 @@ Por el contrario si el archivo .txt es incorrecto se mostrara un mensaje de que 
 - El archivo no puede iniciar por un caracter.
 - Se validara que el archivo no tenga letras.
 - No se puede realizar una división por cero.
+- Los decimales deben llevar punto y no comas.
 - La operación no puede tener varios signos seguidos.
 
 

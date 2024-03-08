@@ -1,8 +1,5 @@
 package com.nkl;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Validacion {
     private int validacion = 1;
 
@@ -24,7 +21,9 @@ public class Validacion {
             System.err.println("El archivo txt contiene letras.");
         }else if(text.contains("/|0|") || text.contains("/|0.0|")){
             System.err.println("No se puede dividir por cero.");
-        }else{
+        } else if (text.replace("|", "").matches(".*[+\\-*/]{2,}.*")) {
+            System.err.println("La operación no puede tener varios signos seguidos.");
+        } else{
             validacion = 0;
         }
 

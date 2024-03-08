@@ -1,5 +1,5 @@
 # Calculadora txt Java
-Para este proyecto se podrá calcular las cuatro (4) operaciones matematicas basicas las cuales son:
+Para este proyecto se podrá calcular las cuatro (4) operaciones matematicas basicas mediante un archivo .txt las cuales son:
 - Suma (+)
 - Resta (-)
 - Multiplicación (*)

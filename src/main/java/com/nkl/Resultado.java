@@ -9,28 +9,29 @@ public class Resultado {
     LecturaTxt leerArchivo = new LecturaTxt();
     Validacion validarTxt = new Validacion();
 
-    public void mostrarResultado(){
+    public void mostrarResultado(String url){
         ArrayList<Character> ops = new ArrayList<>();
         ArrayList<Double> nums = new ArrayList<>();
-        textoTxt = leerArchivo.leerTxt();
+        textoTxt = leerArchivo.leerTxt(url);
 
-        System.out.println("-----------------------------------");
-        System.out.println("Operación: "+ textoTxt.replace("|", ""));
-        System.out.println("-----------------------------------");
-
-        if(validarTxt.validarTexto(textoTxt) == 0){
+        if (!textoTxt.equals("invalid") && validarTxt.validarTexto(textoTxt) == 0){
             String[] subs = textoTxt.split("\\|");
-
-            for (String sub: subs){
-                if(sub.matches("[+-]?[0-9]*\\.?[0-9].*")){
-                    double num = Double.parseDouble(sub);
-                    nums.add(num);
-                } else if (sub.matches("[-+*/]")) {
-                    ops.add(sub.charAt(0));
-                }else{
-                    System.err.println("Es invalido el archivo. Revise la operación.");
-                    System.exit(0);
+            try{
+                for (String sub: subs){
+                    if(sub.matches("[+-]?[0-9]*\\.?[0-9].*")){
+                        double num = Double.parseDouble(sub);
+                        nums.add(num);
+                    } else if (sub.matches("[-+*/]")) {
+                        ops.add(sub.charAt(0));
+                    }else{
+                        System.err.println("Es invalido el archivo. Revise la operación.");
+                        System.exit(0);
+                    }
                 }
+            }catch (NumberFormatException ignored){
+                System.out.println("-----------------------------------");
+                System.out.println("La estructura del archivo no es adecuada.");
+                return;
             }
 
             resultado = nums.get(0);
@@ -47,6 +48,10 @@ public class Resultado {
                     break;
                 }
             }
+
+            System.out.println("-----------------------------------");
+            System.out.println("Operación: "+ textoTxt.replace("|", ""));
+            System.out.println("-----------------------------------");
 
             System.out.println("El resultado de la operación es: "+resultado);
         }

@@ -37,4 +37,21 @@ public class Validacion {
 
         return validacion;
     }
+
+    public boolean validarTipoArchivo(String url) {
+        if (url.endsWith(".txt")){
+            return true;
+        }
+        return false;
+    }
+
+    public int validarOrigenArchivo(String url){
+        if (url.startsWith("https://") || url.startsWith("http://")){
+            return 1;
+        } else if (url.startsWith("c:\\") || url.startsWith("d:\\")) {
+            return 2;
+        }else {
+            return 0;
+        }
+    }
 }

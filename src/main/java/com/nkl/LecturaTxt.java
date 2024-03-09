@@ -5,10 +5,10 @@ import java.nio.file.*;
 import java.util.stream.Stream;
 
 public class LecturaTxt {
-    public String leerTxt(){
+    public String leerTxt(String url){
         StringBuilder texto = new StringBuilder();
 
-        try(Stream<String> stream = Files.lines(Paths.get("ficheros/Calculadora.txt"))){
+        try(Stream<String> stream = Files.lines(Paths.get(url))){
             stream.forEach(line -> {
                 if (line.trim().isEmpty()){
                     return;
@@ -18,10 +18,12 @@ public class LecturaTxt {
                     texto.append(line.trim()).append("|");
                 }
             });
-        }catch (IOException e){
-            System.err.println("Error al intentar leer el archivo: "+ e);
+
+            return texto.toString();
+        }catch (IOException | InvalidPathException e){
+            System.err.println("La ruta del archivo no es valida, el archivo no existe o no es accesible.");
         };
 
-        return texto.toString();
+        return "invalid";
     }
 }

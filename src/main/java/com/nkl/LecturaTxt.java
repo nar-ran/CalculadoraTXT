@@ -56,6 +56,6 @@ public class LecturaTxt {
             throw new RuntimeException(e);
         }
 
-        return texto.toString();
+        return "invalid";
     }
 }

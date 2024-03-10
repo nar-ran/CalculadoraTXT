@@ -12,7 +12,12 @@ public class Resultado {
     public void mostrarResultado(String url){
         ArrayList<Character> ops = new ArrayList<>();
         ArrayList<Double> nums = new ArrayList<>();
-        textoTxt = leerArchivo.leerTxt(url);
+
+        switch (validarTxt.validarOrigenArchivo(url)){
+            case 1 -> textoTxt = leerArchivo.leerTxtOnline(url);
+            case 2 -> textoTxt = leerArchivo.leerTxt(url);
+            default -> textoTxt = "invalid";
+        }
 
         if (!textoTxt.equals("invalid") && validarTxt.validarTexto(textoTxt) == 0){
             String[] subs = textoTxt.split("\\|");

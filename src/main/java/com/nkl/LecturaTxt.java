@@ -33,7 +33,7 @@ public class LecturaTxt {
     }
 
     public String leerTxtOnline(String url){
-        StringBuilder content = new StringBuilder();
+        StringBuilder texto = new StringBuilder();
 
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
@@ -45,10 +45,10 @@ public class LecturaTxt {
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    content.append(line.trim()).append("|");
+                    texto.append(line.trim()).append("|");
                 }
                 reader.close();
-                return content.toString();
+                return texto.toString();
             }else {
                 System.out.println("\"Error al obtener el archivo. Código de respuesta: \" + responseCode");
             }
@@ -56,6 +56,6 @@ public class LecturaTxt {
             throw new RuntimeException(e);
         }
 
-        return content.toString();
+        return texto.toString();
     }
 }

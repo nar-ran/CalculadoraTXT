@@ -45,8 +45,7 @@ public class LecturaTxt {
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    content.append(line);
-                    content.append("\n");
+                    content.append(line.trim()).append("|");
                 }
                 reader.close();
                 return content.toString();

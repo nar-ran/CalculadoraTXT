@@ -22,7 +22,7 @@ public class Menu {
                     System.out.println("La URL del archivo no es valida.");
                 }else if (!validacion.validarTipoArchivo(url.toLowerCase())){
                     System.out.println("El tipo de archivo no es de extensión .txt");
-                }else if(validacion.validarEstructuraTexto(url) != 0){
+                }else{
                     rs.mostrarResultado(url);
                 }
             }

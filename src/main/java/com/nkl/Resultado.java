@@ -29,10 +29,10 @@ public class Resultado {
                     } else if (sub.matches("[-+*/]")) {
                         ops.add(sub.charAt(0));
                     }else{
-                        System.err.println("Es invalido el archivo. Revise la operación.");
+                        return;
                     }
                 }
-            }catch (NumberFormatException e){
+            }catch (NumberFormatException | IndexOutOfBoundsException e){
                 System.out.println("-----------------------------------");
                 System.out.println("La estructura del archivo no es adecuada."+e);
                 return;

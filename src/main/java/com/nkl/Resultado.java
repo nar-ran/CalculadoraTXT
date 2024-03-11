@@ -19,6 +19,8 @@ public class Resultado {
             default -> textoTxt = "invalid";
         }
 
+        textoTxt = textoTxt.replaceAll("['$,]", "");
+
         if (!textoTxt.equals("invalid") && validarTxt.validarEstructuraTexto(textoTxt) == 0){
             String[] subs = textoTxt.split("\\|");
             try{
@@ -49,7 +51,7 @@ public class Resultado {
                     }
                 }catch (IndexOutOfBoundsException e){
                     System.err.println("La operación del archivo es invalida.");
-                    break;
+                    return;
                 }
             }
 

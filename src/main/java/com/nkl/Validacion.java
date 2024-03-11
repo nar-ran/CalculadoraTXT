@@ -29,7 +29,7 @@ public class Validacion {
             if (text.contains(",")){
                 System.err.println("No se permiten las comas, los decimales van con punto.");
         }else
-            if (text.replace("|", "").matches(".*[+\\-*/]{2,}.*")) {
+            if (text.replace("|", "").matches(".*[+\\*/]{2,}.*")) {
                 System.err.println("La operación no puede tener varios signos seguidos.");
         } else{
             validacion = 0;

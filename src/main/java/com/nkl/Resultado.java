@@ -13,13 +13,13 @@ public class Resultado {
         ArrayList<Character> ops = new ArrayList<>();
         ArrayList<Double> nums = new ArrayList<>();
 
-        switch (validarTxt.validarOrigenArchivo(url)){
+        switch (validarTxt.validarOrigenArchivo(url.toLowerCase())){
             case 1 -> textoTxt = leerArchivo.leerTxtOnline(url);
-            case 2 -> textoTxt = leerArchivo.leerTxt(url);
+            case 2 -> textoTxt = leerArchivo.leerTxtLocal(url);
             default -> textoTxt = "invalid";
         }
 
-        if (!textoTxt.equals("invalid") && validarTxt.validarTexto(textoTxt) == 0){
+        if (!textoTxt.equals("invalid") && validarTxt.validarEstructuraTexto(textoTxt) == 0){
             String[] subs = textoTxt.split("\\|");
             try{
                 for (String sub: subs){
@@ -30,12 +30,11 @@ public class Resultado {
                         ops.add(sub.charAt(0));
                     }else{
                         System.err.println("Es invalido el archivo. Revise la operación.");
-                        System.exit(0);
                     }
                 }
-            }catch (NumberFormatException ignored){
+            }catch (NumberFormatException e){
                 System.out.println("-----------------------------------");
-                System.out.println("La estructura del archivo no es adecuada.");
+                System.out.println("La estructura del archivo no es adecuada."+e);
                 return;
             }
 

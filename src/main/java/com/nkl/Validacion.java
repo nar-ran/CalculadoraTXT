@@ -3,7 +3,7 @@ package com.nkl;
 public class Validacion {
     private int validacion = 1;
 
-    public int validarTexto(String text) {
+    public int validarEstructuraTexto(String text) {
         int count = 0;
         for(int i = 0; i <= text.length() - 1; i++){
             if(text.charAt(i) == '|'){

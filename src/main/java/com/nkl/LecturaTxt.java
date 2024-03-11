@@ -8,7 +8,7 @@ import java.nio.file.*;
 import java.util.stream.Stream;
 
 public class LecturaTxt {
-    public String leerTxt(String url){
+    public String leerTxtLocal(String url){
         StringBuilder texto = new StringBuilder();
 
         try(Stream<String> stream = Files.lines(Paths.get(url))){

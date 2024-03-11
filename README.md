@@ -27,4 +27,4 @@ Por el contrario, si el archivo .txt es incorrecto, se mostrará un mensaje de q
 Se presenta el diagrama de clases donde se encuentra la estructura del programa.
 
 
-![Diagrama Clases Calculadora txt Final](https://github.com/nar-ran/CalculadoraTXT/assets/143750294/f666e798-9f14-43d3-bd3a-0653cc1a8d90))
+![Diagrama Clases Calculadora txt Final](https://github.com/nar-ran/CalculadoraTXT/assets/143750294/f666e798-9f14-43d3-bd3a-0653cc1a8d90)

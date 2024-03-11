@@ -18,7 +18,7 @@ public class Validacion {
                 System.err.println("El archivo no tiene una estructura adecuada.");
         }else
             if(!text.matches("[+-]?[0-9]*\\.?[0-9].*")){
-                System.err.println("El archivo no puede iniciar con: "+text.charAt(0));
+                System.err.println("El contenido del archivo es incorrecto.");
         }else
             if(text.matches("[a-zA-Z]")){
                 System.err.println("El archivo txt contiene letras.");

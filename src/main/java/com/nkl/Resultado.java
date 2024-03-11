@@ -34,9 +34,9 @@ public class Resultado {
                         return;
                     }
                 }
-            }catch (NumberFormatException | IndexOutOfBoundsException e){
+            }catch (Exception e){
                 System.out.println("-----------------------------------");
-                System.err.println("La estructura del archivo no es adecuada.");
+                System.out.println("La estructura del archivo no es adecuada.");
                 return;
             }
 

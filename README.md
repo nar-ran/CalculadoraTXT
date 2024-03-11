@@ -6,6 +6,7 @@ Para este proyecto se podrá calcular mediante un archivo .txt las cuatro (4) op
 - División (/)
 
 El archivo deberá ser pasado por el usuario mediante una URL, la URL puede ser local del dispositivo o estar alojada en la web.
+En caso de ser de un repositorio de Github debe ser del tipo raw, por ejemplo:  https://raw.githubusercontent.com/nar-ran/CalculadoraTXT/main/ficheros/Calculadora.txt
 
 Para poder realizar las operaciones del archivo se pasará cada entrada de la calculadora en una línea diferente del archivo.
 

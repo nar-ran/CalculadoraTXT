@@ -36,7 +36,7 @@ public class Resultado {
                 }
             }catch (NumberFormatException | IndexOutOfBoundsException e){
                 System.out.println("-----------------------------------");
-                System.out.println("La estructura del archivo no es adecuada."+e);
+                System.err.println("La estructura del archivo no es adecuada.");
                 return;
             }
 
